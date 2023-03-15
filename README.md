@@ -12,4 +12,4 @@ Well, now you **can!** With **Origin**, you can experience Obsidian like it was 
 
 # Credits
 - A *huuuuge* amount of code was directly taken from Obsidian v0.15.9. I just made minor modifications to make them *work* with the new version. 
-- Thank you Obsidian for making the **best** Markdown app with the **best** design features!
+- A big thanks to everyone who worked on Obsidian for making the **best** Markdown app with the **best** design features!
