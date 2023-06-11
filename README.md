@@ -9,5 +9,5 @@ Well, now you **can!** With **Origin**, you can experience Obsidian like it was 
 
 
 # Credits
-- Based on the design of  pre-1.0.0 Obsidian
+- Based on the design of Obsidian version 0.15.9
 - Swapped icons from [Iconify](https://iconify.design/)
