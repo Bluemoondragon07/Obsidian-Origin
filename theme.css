@@ -18,6 +18,7 @@ body {
     --radius-l: 6px;
 }
 
+/* eliminate the hover effect for some elements */
 .workspace-ribbon,
 .workspace-tab-header-container {
   --background-modifier-hover: transparent !important;
@@ -116,12 +117,11 @@ svg.svg-icon.lucide-sort-asc {
     --input-shadow: var(--background-modifier-border) 0 0 0px 1px;
     --background-secondary-alt: var(--color-base-10);
     --color-accent-1: hsl(calc(var(--accent-h) - 5), calc(var(--accent-s) - 30%), calc(var(--accent-l) - 27%));
-    --color-accent-2: hsl(var(--accent-h), calc(var(--accent-s) - 34%), calc(var(--accent-l) - 30%));
+    --color-accent-2: hsl(calc(var(--accent-h) - 8), calc(var(--accent-s) + 7%), calc(var(--accent-l) + 8%));
     --color-accent: hsl(calc(var(--accent-h) - 8), calc(var(--accent-s) + 5%), calc(var(--accent-l) + 4%));
   }
 
   .theme-light, .theme-dark {
-
     --color-blue-rgb: 68, 138, 255;
     --color-blue: rgb(68, 138, 255);
     --color-light-blue-rgb: 0, 176, 255;
