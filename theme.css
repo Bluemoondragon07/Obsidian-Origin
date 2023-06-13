@@ -7,15 +7,17 @@
 body {
     --font-default: Inter, "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans JP", 'Yu Gothic', "Microsoft YaHei Light", sans-serif;
     --text-on-accent: white !important;
-    --header-height: 30px;
-    --ribbon-width: 30px;
-    --titlebar-height: 25px;
     --modal-border-color: var(--background-modifier-border) !important;
     --collapse-icon-color-collapsed: var(--text-muted) !important;
     --nav-collapse-icon-color: var(--text-muted);
     --radius-s: 3px;
     --radius-m: 5px;
     --radius-l: 6px;
+}
+body:not(.is-mobile) {
+    --header-height: 30px;
+    --ribbon-width: 30px;
+    --titlebar-height: 25px;
 }
 
 /* eliminate the hover effect for some elements */
@@ -26,7 +28,7 @@ body {
 
 /* ------- ** padding ** ----------- */
 body {
-    --size-2-1: 9px;
+    --size-2-1: 6px;
     --size-2-2: 10px;
     --size-2-3: 10px;
     --size-4-1: 4px;
@@ -125,7 +127,7 @@ svg.svg-icon.lucide-sort-asc {
     --color-blue-rgb: 68, 138, 255;
     --color-blue: rgb(68, 138, 255);
     --color-light-blue-rgb: 0, 176, 255;
-    --color-light-blue-rgb: rgb(0, 176, 255);
+    --color-light-blue: rgb(0, 176, 255);
     --color-cyan-rgb: 0, 184, 212;
     --color-cyan: rgb(0, 184, 212);
     --color-teal-rgb: 0, 191, 165;
@@ -312,13 +314,11 @@ background-color: var(--background-secondary-alt) !important;
 /* make the background lighter, like a tab.
 But only when the file explorer is not active, because
 the colorful border interferes with the tab look. */
-.mod-left-split .workspace-tab-header.is-active:not(.mod-active) {
+.mod-left-split .workspace-tab-header.is-active {
 	background-color: var(--background-secondary) !important;
   border-radius: 4px 4px 0 0;
 }
-.mod-left-split .workspace-tab-header.is-active {
-  background-color: transparent !important;
-}
+
 
 .mod-left-split .workspace-tab-header {
   /* make these tabs wider */
@@ -343,12 +343,12 @@ body {
 
 /* show the note icon in the view header. */
 /* This button can be used to drag the note into another pane. */
-.view-header .view-header-icon {
+body:not(.is-mobile) .view-header .view-header-icon {
     display: flex;
     padding-left: 0;
     padding-right: 0;
   }
-.view-header {
+body:not(.is-mobile) .view-header {
     height: var(--header-height) !important;
     background-color: var(--background-primary);
   border-bottom: var(--border-width) solid var(--background-modifier-border);
@@ -382,7 +382,8 @@ display: none !important;
 }
 
 /* now active panes have a colorful border just like in the older version! */
-.workspace-leaf.mod-active {
+body:not(.is-mobile) .workspace-leaf.mod-active:has([data-type="markdown"]),
+body:not(.is-mobile) .workspace-leaf.mod-active:has([data-type="empty"])  {
   border-color: hsla(var(--color-accent-hsl), 0.45) !important;
 }
 
@@ -490,7 +491,7 @@ body {
 /* ----- ***** Settings ***** ------ */
 body {
   --modal-width: 80vw;
-  --modal-max-width: unset;
+  --modal-max-width: 80vw;
   --modal-height: 650px;
   --modal-border-width: 0px;
   --background-modifier-cover: rgba(0, 0, 0, 0.78) !important;
