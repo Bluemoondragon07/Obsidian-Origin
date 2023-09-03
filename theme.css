@@ -46,7 +46,9 @@ svg.svg-icon.lucide-folder-closed,
 svg.svg-icon.lucide-folder-open,
 svg.svg-icon.lucide-file,
 [aria-label="New note"] svg.svg-icon.lucide-edit,
-svg.svg-icon.lucide-sort-asc {
+svg.svg-icon.lucide-sort-asc,
+svg.svg-icon.lucide-edit-3,
+svg.svg-icon.lucide-book-open {
     background-color: currentColor;
     -webkit-mask-repeat: no-repeat;
 }
@@ -89,6 +91,14 @@ svg.svg-icon.lucide-sort-asc {
   -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" viewBox="0 0 2048 2048"%3E%3Cpath fill="currentColor" d="m1069 499l-90 90l-338-337l-1 1796H512l1-1799l-340 340l-90-90L576 6l493 493zm807 960l91 90l-493 493l-494-493l91-90l338 338l-1-1797h128l1 1798l339-339z"%2F%3E%3C%2Fsvg%3E');
 }
 
+/* edit icon */
+svg.svg-icon.lucide-edit-3 {
+  -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" viewBox="0 0 64 64"%3E%3Cpath fill="currentColor" d="m59.466 6.317l-1.783-1.784a8.654 8.654 0 0 0-12.234 0L9.419 40.565L2.278 59.237c-.838 2.21.281 3.323 2.484 2.481l18.675-7.134l36.029-36.033c3.381-3.376 3.377-8.853 0-12.234m-22.629 9.486l2.508 2.507l-24.764 24.766l-2.508-2.509l24.764-24.764m3.834 3.834l3.695 3.696l-24.763 24.765l-3.695-3.695l24.763-24.766M11.026 57.32l-4.342-4.346l4.201-10.941L21.964 53.11l-10.938 4.21m12.411-5.387l-2.506-2.509l24.762-24.765l2.508 2.509l-24.764 24.765m26.209-26.21L38.281 14.36l2.827-2.828l11.365 11.363l-2.827 2.828"%2F%3E%3C%2Fsvg%3E');
+}
+
+svg.svg-icon.lucide-book-open {
+  -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" viewBox="0 0 512 512"%3E%3Ccircle cx="256" cy="256" r="64" fill="currentColor"%2F%3E%3Cpath fill="currentColor" d="M490.84 238.6c-26.46-40.92-60.79-75.68-99.27-100.53C349 110.55 302 96 255.66 96c-42.52 0-84.33 12.15-124.27 36.11c-40.73 24.43-77.63 60.12-109.68 106.07a31.92 31.92 0 0 0-.64 35.54c26.41 41.33 60.4 76.14 98.28 100.65C162 402 207.9 416 255.66 416c46.71 0 93.81-14.43 136.2-41.72c38.46-24.77 72.72-59.66 99.08-100.92a32.2 32.2 0 0 0-.1-34.76ZM256 352a96 96 0 1 1 96-96a96.11 96.11 0 0 1-96 96Z"%2F%3E%3C%2Fsvg%3E');
+}
 
 /* --------- ****** Light and Dark themes ****** ---------- */
 
@@ -162,7 +172,7 @@ body {
     background-color: var(--ribbon-background);
     border-bottom: var(--tab-outline-width) solid var(--background-secondary-alt);
     border-right: var(--tab-outline-width) solid var(--ribbon-background);
-    width: calc(var(--ribbon-width) - 1px);
+    width: var(--ribbon-width);
   }
   .workspace-ribbon.mod-left .sidebar-toggle-button {
     width: calc(vaR(--ribbon-width) - 10px);
@@ -418,9 +428,15 @@ blockquote {
 .hide-meta .frontmatter.language-yaml,
 .no-meta .frontmatter.language-yaml,
 .hide-metadata .frontmatter.language-yaml,
-.no-metadata .frontmatter.language-yaml {
+.no-metadata .frontmatter.language-yaml,
+.frontmatter-properties .frontmatter.language-yaml /* when properties are turned on */ {
   display: none !important;
 }
+
+body:not(.frontmatter-properties) .metadata-container {
+  display: none !important;
+}
+
 
 /* ----- ***** Callouts ***** ----- */
 body {
@@ -592,6 +608,19 @@ settings:
           -
             label: Show Tabs Completely
             value: show-tabs
+    -
+      id: frontmatter-style
+      title: Frontmatter/Properties Style
+      type: class-select
+      allowEmpty: false
+      default: frontmatter-classic
+      options:
+        -
+          label: Classic Frontmatter
+          value: frontmatter-classic
+        - 
+          label: Properties
+          value: frontmatter-properties
 
 
 */
